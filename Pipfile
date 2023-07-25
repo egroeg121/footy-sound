@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[[source]]
+url = "https://download.pytorch.org/whl/cu117"
+verify_ssl = true
+name = "pytorch"
+
+[dev-packages]
+# Although could be installed by tox or pre-commit, it's useful to have them as cli
+black = "*"
+flake8 = "*"
+pre-commit = "*"
+footy_sound = {editable = true, extras = ["testing"], path = "."}
+ipykernel = "*"
+
+[packages]
+# Package to install are listed here.
+# src package is non-dev so don't run as editable
+ultralytics = {version = "==8.0.141"}
+torch = {version = ">=2.0.1", index = "pytorch"}
+torchvision = {version = "*", index = "pytorch"}
